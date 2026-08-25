@@ -49,6 +49,7 @@ deepseek_api_key="$(/usr/bin/security find-generic-password \
 if [[ -n "$deepseek_api_key" ]]; then
     export PDF2ZH_DEEPSEEK=true
     export PDF2ZH_DEEPSEEK_API_KEY="$deepseek_api_key"
+    export PDF2ZH_DEEPSEEK_MODEL="deepseek-v4-flash"
 fi
 unset deepseek_api_key
 
