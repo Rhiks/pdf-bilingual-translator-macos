@@ -1,0 +1,10 @@
+.DS_Store
+dist/
+build/
+*.dmg
+*.log
+*.part
+.env
+.env.*
+config.toml
+secrets/
