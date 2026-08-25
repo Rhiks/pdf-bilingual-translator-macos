@@ -46,6 +46,8 @@ security find-generic-password \
 
 先尝试兼容模式、OCR workaround 或不同输出模式。如果问题能在不含敏感信息的最小 PDF 上复现，再向 BabelDOC/PDFMathTranslate 上游提交 Issue。
 
+翻译中间文件和结果写入 `~/Library/Application Support/PDF Bilingual Translator/workspace/pdf2zh_files/`。应用包本身保持只读，启动后不会改写已签名内容。
+
 ## 完全停止服务
 
 读取 PID 并仅结束该应用记录的进程：

@@ -21,6 +21,7 @@ macOS 应用壳只负责启动和生命周期管理：选择本地端口、复�
 | WebUI 地址 | `127.0.0.1:7860` 起的首个空闲端口 |
 | PID | `~/Library/Application Support/PDF Bilingual Translator/server.pid` |
 | 端口 | `~/Library/Application Support/PDF Bilingual Translator/server.port` |
+| 可写工作目录与翻译结果 | `~/Library/Application Support/PDF Bilingual Translator/workspace/` |
 | 日志 | `~/Library/Logs/PDF Bilingual Translator/webui.log` |
 | 资源缓存 | `~/.cache/babeldoc/` |
 | DeepSeek Key | macOS 钥匙串服务 `local.codex.pdf-bilingual-translator.deepseek` |

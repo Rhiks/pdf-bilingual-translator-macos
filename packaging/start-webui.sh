@@ -6,13 +6,14 @@ RESOURCE_DIR="$(cd "$(dirname "$0")" && pwd)"
 RUNTIME_DIR="$RESOURCE_DIR/runtime"
 PYTHON_BIN="$RUNTIME_DIR/python/bin/python3.12"
 APP_SUPPORT_DIR="$HOME/Library/Application Support/PDF Bilingual Translator"
+WORK_DIR="$APP_SUPPORT_DIR/workspace"
 LOG_DIR="$HOME/Library/Logs/PDF Bilingual Translator"
 PID_FILE="$APP_SUPPORT_DIR/server.pid"
 PORT_FILE="$APP_SUPPORT_DIR/server.port"
 LOG_FILE="$LOG_DIR/webui.log"
 DEFAULT_PORT=7860
 
-mkdir -p "$APP_SUPPORT_DIR" "$LOG_DIR" "$HOME/.cache/babeldoc"
+mkdir -p "$WORK_DIR/pdf2zh_files" "$LOG_DIR" "$HOME/.cache/babeldoc"
 
 if [[ ! -f "$HOME/.cache/babeldoc/models/doclayout_yolo_docstructbench_imgsz1024.onnx" ]]; then
     /usr/bin/ditto "$RESOURCE_DIR/babeldoc-cache" "$HOME/.cache/babeldoc"
@@ -50,6 +51,8 @@ if [[ -n "$deepseek_api_key" ]]; then
     export PDF2ZH_DEEPSEEK_API_KEY="$deepseek_api_key"
 fi
 unset deepseek_api_key
+
+cd "$WORK_DIR" || exit 1
 
 nohup "$PYTHON_BIN" -m pdf2zh_next.main \
     --gui \

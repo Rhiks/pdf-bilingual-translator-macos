@@ -108,7 +108,7 @@ flowchart LR
     I --> J[恢复版式并生成 PDF]
 ```
 
-应用只监听 `127.0.0.1`。启动状态保存在 `~/Library/Application Support/PDF Bilingual Translator/`，日志写入 `~/Library/Logs/PDF Bilingual Translator/webui.log`，BabelDOC 资源缓存位于 `~/.cache/babeldoc/`。
+应用只监听 `127.0.0.1`。启动状态和可写工作目录保存在 `~/Library/Application Support/PDF Bilingual Translator/`，翻译结果位于其 `workspace/pdf2zh_files/` 子目录；日志写入 `~/Library/Logs/PDF Bilingual Translator/webui.log`，BabelDOC 资源缓存位于 `~/.cache/babeldoc/`。
 
 ## 从源码构建
 
